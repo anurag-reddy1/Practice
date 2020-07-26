@@ -1,0 +1,31 @@
+
+public class MyHashSet {
+int[] map;
+int i=0;
+public MyHashSet() {
+        map=new int[10000];
+    }
+    
+    public void add(int key) {
+        map[key]=1;
+    }
+    
+    public void remove(int key) {
+        map[key]=0;
+    }
+ public boolean contains(int key) {
+	 if(map[key]==1)
+		 return true;
+	 else
+		 return false;
+    }
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyHashSet obj=new MyHashSet();
+		obj.add(2);
+		System.out.println(obj.contains(2));
+	}
+
+}
