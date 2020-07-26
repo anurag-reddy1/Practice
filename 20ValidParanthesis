@@ -1,0 +1,34 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
+public class LT20 {
+
+	public static void main(String[] args) {
+		//String test="\"{[]}\"";
+		String test="{[])";
+	 Map<Character,Character> mappings = new HashMap<>();
+	 mappings.put(')','(');
+	 mappings.put(']', '[');
+	 mappings.put('}', '{');
+	 char topElement;
+	 Stack<Character> stack= new Stack<>();
+	 
+	 for(int i=0;i<test.length();i++) {
+		 char c=test.charAt(i);
+		 
+		 if(mappings.containsKey(c)) {
+			 topElement= stack.isEmpty() ? '#':stack.pop();
+			 if(topElement!=mappings.get(c))
+			 { System.out.println("false");
+			 System.exit(0);
+			 }
+		 }
+		 else
+		 {
+			 stack.push(c);
+		 }
+		 
+	 }
+	}
+}
