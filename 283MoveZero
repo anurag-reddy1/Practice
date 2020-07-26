@@ -1,0 +1,31 @@
+public class MoveZero {
+
+	static void find(int[] input) {
+		int start=0;
+		int temp;
+		int end=input.length-1;
+		
+		while(start<=end) {
+			if(input[start]==0){
+				if(input[end]!=0) 
+				{
+					temp=input[end];
+					input[end]=0;
+					input[start]=temp;
+				}
+				end--;
+			}
+			start++;	
+		}
+		for(int i=0;i<input.length;i++) {
+			System.out.println(input[i]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			int[] input= {0,1,0,3,12};
+			find(input);
+	}
+
+}
