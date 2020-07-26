@@ -1,0 +1,30 @@
+
+public class MyHashMap {
+	int map[];
+	 public MyHashMap() {
+	        map= new int[10000];
+	    }	
+	 
+	 public void put(int key, int value) {
+	        map[key]=value;
+	    }
+	 
+	 public int get(int key) {
+	     return map[key]; 
+	    }
+	 public void remove(int key) {
+	        map[key]=-1;
+	    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyHashMap obj=new MyHashMap();
+		obj.put(3, 10);
+		int get1=obj.get(3);
+		System.out.println(get1);
+		obj.remove(3);
+		get1=obj.get(3);
+		System.out.println(get1);
+	}
+
+}
