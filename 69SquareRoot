@@ -1,0 +1,29 @@
+
+public class bsearch {
+	
+	static String find(int[] input, int search) {
+		int start=input[0];
+		int end=input[input.length-1];
+		for(int i=0;i<input.length;i++) {
+			int mid=start+(end-start)/2;
+			if(mid==search) {
+				return "found";
+			}
+			else if(search>mid) {
+				start=mid;
+			}
+			else
+				end=mid;			
+		}
+		return "not found";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int search=21;
+		int[] input= {1,2,4,5,6,7,9,11,12,13,16,19,20};
+		System.out.println(find(input,search));
+		
+	}
+
+}
