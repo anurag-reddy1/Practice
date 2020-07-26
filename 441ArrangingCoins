@@ -1,0 +1,27 @@
+
+public class ArrangingCoins {
+	
+	static int find(int n) {
+		if(n==1)
+			return 1;
+		if(n==0)
+			return 0;
+		int start=0;int result=0; int each_row=0;
+		for(int i=1;start<n;i++) {
+			start=start+i;
+			result=i;
+			if(start<=0)
+				break;
+		}
+		if(n==start)
+			return result;
+		return result-1;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n=6;
+		System.out.println(find(n));
+	
+	}
+
+}
