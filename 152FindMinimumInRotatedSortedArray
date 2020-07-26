@@ -1,0 +1,34 @@
+
+public class Sort {
+
+	public static int find(int[] nums)
+	{
+		int start=0;
+		int end=nums.length-1;
+		int mid;
+		while(start<=end) {
+			
+			if(nums[start]<=nums[end])
+				return nums[start];
+			mid=start+(end-start)/2;
+			System.out.println("mid"+mid);
+			if(nums[mid]>=nums[start]) {
+				start=mid+1;	
+			}
+			else
+			{end=mid;
+			}
+			System.out.println("start"+start);
+			System.out.println("end"+end);
+		}
+		return 100;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums= {4,5,6,7,8,0,1,2};
+		System.out.println(find(nums));
+	}
+
+}
