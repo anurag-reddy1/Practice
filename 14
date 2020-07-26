@@ -1,0 +1,29 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        String prefix=strs[0];
+        for(int i=1;i<strs.length;i++)
+        	while(strs[i].indexOf(prefix)!=0) {
+        		prefix=prefix.substring(0,prefix.length()-1);
+        	}
+    
+    return prefix;
+    }
+}
+
+public class LT14 {
+    
+    
+    public static void main(String[] args) throws IOException {
+        String[] strs= {"flo","flower","flow","flight"};
+            String ret = new Solution().longestCommonPrefix(strs);
+            
+            String out = (ret);
+            
+            System.out.print(out);
+        }
+    
+}
