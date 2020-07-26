@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class GroupAnagrams {
+
+	public static void groupAnagrams(String[] strs){
+		
+		HashMap<String, List> group=new HashMap<>();
+		
+		for(String s: strs) {
+			char[] a=s.toCharArray();
+			Arrays.sort(a);
+			String key=String.valueOf(a);
+			if(!group.containsKey(key))
+				{group.put(key, new ArrayList());}
+			group.get(key).add(s);
+		}
+		
+		System.out.println(group.values());
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] strs= {"eat", "tea", "tan", "ate", "nat", "bat"};		
+		//groupAnagrams(strs);
+		
+		/*HashMap<String, List> map=new HashMap<>();
+		
+		ArrayList list=new ArrayList();
+		list.add(1);
+		list.add(2);
+		map.put("anurag", list);
+		map.get("anurag").add(3);
+		
+		System.out.println(map.get("anurag"));*/
+	}
+
+}
