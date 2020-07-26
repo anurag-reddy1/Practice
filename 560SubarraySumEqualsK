@@ -1,0 +1,28 @@
+import java.util.HashMap;
+
+public class SubArray {
+
+	static int solution(int[] nums, int k) {
+		
+		int sum=0;
+		HashMap<Integer,Integer> map=new HashMap<>();
+		
+		for(int i=0;i<nums.length;i++) {
+			sum=sum+nums[i];
+			if(!map.containsKey(sum))
+				map.put(i,sum);
+			if(sum-map.get(nums[i-1])==k){}
+			
+		}
+		
+		return 1;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] nums= {1,1,1};
+		int k=2;
+	}
+
+}
