@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/*class Solution {
+    public boolean isPalindrome(int x) {
+        String input=Integer.toString(x);
+        String rev="";
+        for(int i=1;i<=input.length();i++) {
+        	rev=rev+input.charAt(input.length()-i);
+        }
+        if(input.equalsIgnoreCase(rev))
+        	return true;
+        else 
+        	return false;
+    }
+}
+*/
+
+class Solution {
+    public boolean isPalindrome(int x) {
+    	int y=x;
+    	int rev=0;
+        if(x<0)
+        	return false;
+        else
+        	while(x!=0) {
+        		rev=rev*10+x%10;
+        		x=x/10;        		
+        	}
+        if(y==rev)
+        	return true;
+        else
+        	return false;
+    }
+}
+
+
+public class LT9 {
+    public static String booleanToString(boolean input) {
+        return input ? "True" : "False";
+    }
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String line;
+        while ((line = in.readLine()) != null) {
+            int x = Integer.parseInt(line);
+            
+            boolean ret = new Solution().isPalindrome(x);
+            
+            String out = booleanToString(ret);
+            
+            System.out.print(out);
+        }
+    }
+}
