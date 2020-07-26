@@ -1,0 +1,26 @@
+
+public class SearchInsert {
+
+	static int find(int[] nums, int target) {
+		int start=0; int end=nums.length-1;
+		while(start<=end) {
+			int mid=start+(end-start)/2;
+			if(nums[mid]==target)
+				return mid;
+			if(target<nums[mid])
+				end=mid-1;
+			else
+				start=mid+1;
+		}
+		return start;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums= {1};
+		int target=0;
+		System.out.println(find(nums,target));
+	}
+
+}
