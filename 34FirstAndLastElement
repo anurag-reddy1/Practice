@@ -1,0 +1,47 @@
+
+public class SortFirstAndLast {
+
+	public static int[] sort(int[] nums,int target) {
+		int start=0;
+		int end=nums.length-1;
+		int mid;
+		int[] initial=new int[2];
+		while(start<=end) {
+			mid=start+(end-start)/2;
+			if(nums[mid]==target)
+			{initial[0]=mid;
+			}	
+			if(target<=nums[mid]) {
+				end=mid-1;
+			}
+			else
+				start=mid+1;
+		}
+		end=nums.length-1;
+		start=initial[0];
+		while(start<=end) {
+			mid=start+(end-start)/2;
+			if(nums[mid]>target)
+				{end=mid-1;
+				System.out.println("entered"+end);}
+			else
+				start=mid+1;
+			
+			if(nums[end]==target)
+				initial[1]=end;
+		}
+		return initial;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] nums= {4,8,8,8,9,10,12,13,14,15,16,17};
+		int target =8;
+		int[] final1=sort(nums,target);
+		for(int i=0;i<final1.length;i++)
+			System.out.println(final1[i]);
+		
+	}
+
+}
