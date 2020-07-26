@@ -1,0 +1,30 @@
+
+public class ValidPalindrome {
+
+	static boolean valid(String s) {		
+		
+		int[] count=new int[128];
+		for(char a:s.toCharArray()) {
+			count[a]++;
+		}
+		int sum=0;
+		for(int v: count) {
+			sum+=v/2*2;
+			if(sum%2==0&&v%2==1)
+				sum++;
+		}
+		
+		if(sum>=2)
+			return true;
+		
+		return false;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="aba";
+		System.out.println(valid(s));
+	}
+
+}
