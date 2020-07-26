@@ -1,0 +1,28 @@
+
+public class RepeatedString {
+
+	static int find(String a, String b) {
+		
+		String z=a;
+		int count=1;
+		while(!a.contains(b) && a.length()<b.length()) {
+			a=a+z;
+			count++;
+		}
+		return count>0?count:-1;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a="abcd";
+		String b="cdabcdab";
+		
+		System.out.println(b.indexOf(a));
+		
+		//System.out.println(find(a,b));
+		
+	
+		
+	}
+
+}
