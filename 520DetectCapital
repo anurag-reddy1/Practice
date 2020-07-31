@@ -1,0 +1,23 @@
+public class DetectCapital {
+	
+	static boolean solution(String word) {
+		if(word.toUpperCase().equals(word)|| word.toLowerCase().equals(word))
+			return true;
+		if(Character.isLowerCase(word.charAt(0)))
+			return false;
+		for(int i=1;i<word.length();i++) {
+			char c=word.charAt(i);
+			if(Character.isUpperCase(c))
+				return false;
+		}
+		return true;
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String word="usa";
+		System.out.println(solution(word));
+	}
+
+}
