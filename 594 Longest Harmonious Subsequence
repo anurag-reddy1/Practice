@@ -1,0 +1,25 @@
+import java.util.HashMap;
+
+public class Harmonious {
+
+public static int findLHS(int[] nums) {
+	int output=0;
+	HashMap<Integer,Integer> find=new HashMap<Integer,Integer>();
+     for(int i=0;i<nums.length;i++) {
+    	 find.put(nums[i], find.getOrDefault(nums[i], 0)+1);
+     }
+     for(int key:find.keySet()) {
+    	 if(find.containsKey(key+1)) {
+    	output=Math.max(output,find.get(key)+find.get(key+1));
+    	 }
+     }
+	return output;
+    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums= {1,3,2,2,5,2,3,7};
+		System.out.println(findLHS(nums));
+	}
+
+}
