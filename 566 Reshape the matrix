@@ -1,0 +1,33 @@
+public class Reshape {
+	
+	 public static int[][] matrixReshape(int[][] nums, int r, int c) {
+	       int[][] output=new int[r][c];
+	       int a=0,b=0;
+	       if(nums.length*nums[0].length!=r*c)
+	    	   return nums;
+	       for(int i=0;i<nums.length;i++) {
+	    	   for(int j=0;j<nums[0].length;j++) {
+	    		  output[a][b++]=nums[i][j];
+	    		  if(b==c) {
+	    			  a++;
+	    			  b=0;
+	    		  }
+	    	   }
+	       }
+		 
+		 return output;
+	    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] nums = {{1,2},{3,4}};
+		int r=4, c=1;
+		int[][] ar=matrixReshape(nums,r,c);
+		for (int r1 = 0; r1 < ar.length; r1++) { 
+			for (int c1 = 0; c1 < ar[r1].length; c1++) {   
+			System.out.print(ar[r1][c1] + " ");
+			}
+			System.out.println();
+	}
+	}
+}
