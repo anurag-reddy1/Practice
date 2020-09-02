@@ -1,0 +1,19 @@
+public class Squares {
+	public static boolean judgeSquareSum(int c) {
+     
+		for(double i=0;i*i<=c;i++) {
+			double b=Math.sqrt(c-(i*i));
+			if(b==(int)b)
+				return true;
+		}
+		
+		return false;
+    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int c=25;
+		System.out.println(judgeSquareSum(c));
+	}
+
+}
