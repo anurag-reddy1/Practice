@@ -1,0 +1,27 @@
+import java.util.HashMap;
+
+public class Origin {
+	public static boolean judgeCircle(String moves) {
+		int i=0,j=0;
+		for(int a=0;a<moves.length();a++ ) {
+			if(moves.charAt(a)=='U')
+				j++;
+			else if(moves.charAt(a)=='D')
+				j--;
+			else if(moves.charAt(a)=='R')
+				i++;
+			else 
+				i--;
+		}
+		if(i==0&&j==0)
+			return true;
+		
+		return false;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		String moves="UDR";
+		System.out.println(judgeCircle(moves));
+	}
+
+}
