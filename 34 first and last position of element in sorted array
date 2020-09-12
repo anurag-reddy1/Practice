@@ -1,0 +1,30 @@
+
+public class FirstAndLastSorted {
+	 public static int[] searchRange(int[] nums, int target) {
+	      int[] output=new int[2];  
+	      output[0]=Integer.MAX_VALUE;
+	      output[1]=Integer.MAX_VALUE;
+	      for(int i=0;i<nums.length;i++) {
+	    	  if(nums[i]==target)
+	    	  { if(output[0]==Integer.MAX_VALUE)
+	    		  output[0]=i;
+	    	  else if(output[1]==Integer.MAX_VALUE);
+	    	  {output[1]=i;
+	    	  }
+	    	  }
+	      }
+	      if(output[0]==Integer.MAX_VALUE || output[1]==Integer.MAX_VALUE)
+	    	  {output[0]=-1;
+	    	  output[1]=-1;}
+	      return output;
+	    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums= {5,7,7,8,8,10};
+		int target=8;
+		int[] output=searchRange(nums,target);
+		System.out.println(output[0]);
+		System.out.println(output[1]);
+	}
+
+}
