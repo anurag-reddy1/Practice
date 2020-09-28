@@ -1,0 +1,32 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      Stack<Integer> st=new Stack<>();
+    int[] flowerbed={0,0,1,0,1};
+
+    int n=1;
+    int count=0;
+    if(flowerbed[0]==0 && flowerbed[1]==0)
+    {st.push(1);
+     count++;}
+    else
+    st.push(flowerbed[0]);
+    st.push(flowerbed[0]);
+    for(int i=1;i<flowerbed.length-1;i++){
+        if(st.peek()==0 && flowerbed[i]==0 && flowerbed[i+1]==0){
+            count++;
+            st.push(1);
+        }
+        else
+        st.push(flowerbed[i]);
+    }
+    if(st.peek()==0&&flowerbed[flowerbed.length-1]==0){
+        count++;
+    }
+    System.out.println(count);
+    if(n<=count)
+    {
+        System.out.println("true");
+    }
+    }
+}
