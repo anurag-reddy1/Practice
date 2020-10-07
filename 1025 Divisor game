@@ -1,0 +1,24 @@
+
+public class Divisor {
+	 public static boolean divisorGame(int N) {
+	       int count=1;
+	       if(N==1)
+	    	   return false;
+	       do {
+	    	   N=N-1;
+	    	   
+	    	   count++;
+	       }
+	       while(N-1!=0);
+	       if((count-1)%2==0 && N-1<=0) {
+    		   return false;
+    	   }
+		 return true;
+	    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int N=4;
+		System.out.println(divisorGame(N));
+	}
+
+}
