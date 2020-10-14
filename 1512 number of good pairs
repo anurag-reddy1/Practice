@@ -1,0 +1,21 @@
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int count=0;
+	 	HashMap<Integer,Integer> map=new HashMap<>();
+	 	for(int i=0;i<nums.length;i++) {
+	 		map.put(nums[i], map.getOrDefault(nums[i], 0)+1);
+	 	}
+	 	for(int a: map.keySet()) {
+	 		if(map.get(a)!=1) {
+	 			int temp=1;
+	 			int y=map.get(a);
+	 			for(int i=y;i>=y-1;i--) {
+	 				temp=temp*i;
+	 			}
+	 			count=count+(temp/2);
+	 		}
+	 	}
+	 	
+		 return count;
+    }
+}
